@@ -201,7 +201,7 @@ class AggcatClient(object):
         </InstitutionLogin>
         """.strip()
 
-        return xml % ''.join(xml_credentials)
+        return (xml % ''.join(xml_credentials)).encode('utf-8')
 
     def _generate_challenge_response(self, responses):
         """Generate a challenge xml to post back to :meth:`discover_and_add_accounts` in case
